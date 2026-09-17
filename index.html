@@ -466,7 +466,7 @@
     </div>
 
     <!-- ==================== SLIDE 6 ==================== -->
-    <div class="slide" id="s6" data-notes="Our third criteria point covers barriers and changing minds. For small firms, the obstacles are paperwork and rented premises. We change their minds by showing immediate cash savings on electricity bills. For large companies, the barrier is internal red tape. We change their minds by proving that a clean supply chain protects them against legal fines and wins customer trust.">
+    <div class="slide" id="s6" data-notes="Our third criteria point covers barriers and changing minds. For small firms, the obstacles are paperwork and rented premises. We change their minds by showing immediate cash savings on electricity bills. For large companies, the barrier is internal red tape and director fiduciary duty, where boards worry that green spending lowers short term profits. We change their minds by proving that a clean supply chain protects long term shareholder value and wins customer trust.">
         <div class="grid-split">
             <div>
                 <div class="pill">Criteria 3: Barriers and Challenges</div>
@@ -485,10 +485,10 @@
                     <div class="card p-3.5">
                         <h3 class="text-sm mb-1">Barriers for Large Firms</h3>
                         <ul class="text-xs space-y-1">
+                            <li><strong>Fiduciary Duty:</strong> Board directors worry upfront green costs reduce short term shareholder returns.</li>
                             <li><strong>Split Departments:</strong> Buying, legal, and facilities teams do not share the same targets.</li>
                             <li><strong>Supplier Data Gap:</strong> Hard to collect real carbon numbers from small vendors.</li>
-                            <li><strong>Slow Timelines:</strong> Board reviews take 12 to 24 months before projects start.</li>
-                            <li><strong>Changing Minds:</strong> Show that green suppliers cut regulatory risk and win new contracts.</li>
+                            <li><strong>Changing Minds:</strong> Show boards that climate compliance protects long term shareholder value.</li>
                         </ul>
                     </div>
                 </div>
@@ -691,7 +691,10 @@
     <div class="notes-drawer" id="notesDrawer">
         <div class="notes-header">
             <span class="notes-title" id="notesTitle">Speaker Notes: Slide 1 of 10</span>
-            <button class="btn-ctrl" onclick="toggleNotes()" style="padding: 0.2rem 0.6rem; font-size: 0.75rem;">Close (N)</button>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <button class="btn-ctrl" onclick="downloadNotesFile()" style="padding: 0.25rem 0.65rem; font-size: 0.74rem; background: #059669;" title="Download complete speaker script as text file">Download Script (.txt)</button>
+                <button class="btn-ctrl" onclick="toggleNotes()" style="padding: 0.25rem 0.65rem; font-size: 0.74rem;">Close (N)</button>
+            </div>
         </div>
         <div class="notes-body" id="notesContent">
             Loading notes...
@@ -736,6 +739,29 @@
 
         function toggleNotes() {
             notesDrawer.classList.toggle('open');
+        }
+
+        function downloadNotesFile() {
+            let scriptText = "CATCH22 GROUP PRESENTATION: COMPLETE SPEAKER SCRIPT\n";
+            scriptText += "Title: How Does Going Green Scale for Small and Large Companies?\n";
+            scriptText += "Target Duration: 7 to 15 Minutes\n";
+            scriptText += "Presenters: Simon Simpson, Richard Matthews, Dean Wilshaw, Christian Fairhall-Smith, M Dahir, Ilyana Brooke, John Kennedy, Jimmy Gorst\n";
+            scriptText += "================================================================================\n\n";
+            slides.forEach((s, idx) => {
+                const hEl = s.querySelector('h1, h2');
+                const title = hEl ? hEl.innerText.trim() : ("Slide " + (idx + 1));
+                const notes = s.getAttribute('data-notes') || 'No speaker notes.';
+                scriptText += "SLIDE " + (idx + 1) + ": " + title.toUpperCase() + "\n";
+                scriptText += "Spoken Script:\n\"" + notes + "\"\n\n";
+                scriptText += "--------------------------------------------------------------------------------\n\n";
+            });
+            const blob = new Blob([scriptText], { type: 'text/plain;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Catch22_Presentation_Speaker_Notes.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
 
         // Keyboard Navigation

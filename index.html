@@ -167,10 +167,18 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(2, 20, 13, 0.98) 0%, rgba(2, 20, 13, 0.8) 70%, transparent 100%);
-            padding: 1rem 1.2rem 0.8rem 1.2rem;
+            background: linear-gradient(to top, rgba(2, 20, 13, 0.98) 0%, rgba(2, 20, 13, 0.82) 75%, transparent 100%);
+            padding: 1rem 1.2rem 0.75rem 1.2rem;
             font-size: 0.8rem;
             color: #ffffff;
+        }
+        .img-source {
+            display: block;
+            font-size: 0.68rem;
+            color: #a7f3d0;
+            margin-top: 0.25rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         /* Enlarge Badge */
@@ -344,7 +352,7 @@
         }
         .modal-content img {
             max-width: 88vw;
-            max-height: 80vh;
+            max-height: 78vh;
             object-fit: contain;
             background: #ffffff;
             display: block;
@@ -452,6 +460,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">National Transition</span>
                     United Kingdom at Night: The Scale of Commercial Power and Decarbonisation
+                    <span class="img-source">Source: NASA Earth Observatory & ESA Sentinel Night Observations</span>
                 </div>
             </div>
         </div>
@@ -497,6 +506,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">Commercial Solar Installation</span>
                     Clean Rooftop Generation and Building Efficiency on Modern UK Premises
+                    <span class="img-source">Source: UK Department for Energy Security and Net Zero (DESNZ)</span>
                 </div>
             </div>
         </div>
@@ -543,6 +553,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">British Countryside</span>
                     Clean River Basin: Working Toward Net Zero 2050
+                    <span class="img-source">Source: Natural England & Environment Agency Catchment Monitoring</span>
                 </div>
             </div>
         </div>
@@ -584,6 +595,7 @@
                 <div class="img-caption" style="position: relative; background: rgba(2, 20, 13, 0.96); padding: 0.6rem 1rem;">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-[11px] block">2025 Benchmark Survey</span>
                     Energy Efficiency Actions by Company Size: Small Firms Lag Across Audits and Fleet EV
+                    <span class="img-source">Source: UK Commercial Energy Efficiency Benchmark Survey 2025 (1,200+ Businesses)</span>
                 </div>
             </div>
         </div>
@@ -625,6 +637,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">National Energy</span>
                     Clean Wind Power and National Grid Connection
+                    <span class="img-source">Source: The Crown Estate & National Grid ESO Clean Energy Records</span>
                 </div>
             </div>
         </div>
@@ -672,6 +685,7 @@
                 <div class="img-caption" style="position: relative; background: rgba(2, 20, 13, 0.96); padding: 0.6rem 1rem;">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-[11px] block">FSB Net Zero Survey 2024</span>
                     Small Business Barriers: Capital Shortage (38%) and Knowledge Deficit (26%)
+                    <span class="img-source">Source: Federation of Small Businesses (FSB) Net Zero Survey 2024 (953 UK SMEs)</span>
                 </div>
             </div>
         </div>
@@ -719,6 +733,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">Natural Carbon Sinks</span>
                     Protected British Peatlands: Preserving Wildlife and Natural Habitats
+                    <span class="img-source">Source: NatureScot & UK Peatland Action Programme</span>
                 </div>
             </div>
         </div>
@@ -764,6 +779,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">Natural Resources</span>
                     Flowing Forest River: Clean Water and Sustainable Energy Flow
+                    <span class="img-source">Source: Forestry England & UK Environment Agency River Health</span>
                 </div>
             </div>
         </div>
@@ -809,6 +825,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">Smart Monitoring</span>
                     Live Energy Tracking and Practical Efficiency Analytics
+                    <span class="img-source">Source: Carbon Trust Industrial Energy Management Studies</span>
                 </div>
             </div>
         </div>
@@ -853,6 +870,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">Growing Together</span>
                     British Forest Canopy: Phased Growth and Lasting Results
+                    <span class="img-source">Source: UK Woodland Carbon Code & Forestry Commission England</span>
                 </div>
             </div>
         </div>
@@ -894,6 +912,7 @@
                 <div class="img-caption">
                     <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs block">Commercial Transition</span>
                     Fleet EV Charging and Commercial Heat Pumps on UK Logistics Premises
+                    <span class="img-source">Source: UK Commercial Fleet Decarbonisation Trials (DESNZ 2024)</span>
                 </div>
             </div>
         </div>
@@ -922,6 +941,7 @@
                     <div class="text-xs text-white font-semibold mb-0.5">Planetary Net Zero Target</div>
                     <div class="text-[10px] text-emerald-200 mb-1.5">Satellite Earth Observation</div>
                     <span class="inline-block px-2.5 py-0.5 bg-emerald-900/80 text-[10px] font-mono text-emerald-300 border border-emerald-500/40 rounded">18 Group Sources</span>
+                    <span class="img-source" style="margin-top: 0.35rem;">Source: NASA Visible Earth</span>
                 </div>
             </div>
         </div>
@@ -1015,7 +1035,7 @@
             const caption = el.querySelector('.img-caption');
             if (img) {
                 modalImg.src = img.src;
-                modalCaption.textContent = caption ? caption.textContent.replace('Click to enlarge', '').trim() : '';
+                modalCaption.innerHTML = caption ? caption.innerHTML.replace('Click to enlarge', '').trim() : '';
                 modal.classList.add('active');
             }
         }

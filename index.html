@@ -741,24 +741,191 @@
             notesDrawer.classList.toggle('open');
         }
 
-        function downloadNotesFile() {
-            let scriptText = "CATCH22 GROUP PRESENTATION: COMPLETE SPEAKER SCRIPT\n";
-            scriptText += "Title: How Does Going Green Scale for Small and Large Companies?\n";
-            scriptText += "Target Duration: 7 to 15 Minutes\n";
-            scriptText += "Presenters: Simon Simpson, Richard Matthews, Dean Wilshaw, Christian Fairhall-Smith, M Dahir, Ilyana Brooke, John Kennedy, Jimmy Gorst\n";
-            scriptText += "================================================================================\n\n";
-            slides.forEach((s, idx) => {
-                const hEl = s.querySelector('h1, h2');
-                const title = hEl ? hEl.innerText.trim() : ("Slide " + (idx + 1));
-                const notes = s.getAttribute('data-notes') || 'No speaker notes.';
-                scriptText += "SLIDE " + (idx + 1) + ": " + title.toUpperCase() + "\n";
-                scriptText += "Spoken Script:\n\"" + notes + "\"\n\n";
-                scriptText += "--------------------------------------------------------------------------------\n\n";
-            });
+                function downloadNotesFile() {
+            const scriptText = "===========================================================================
+               CATCH22 GROUP PRESENTATION: SPEAKER SCRIPT
+      How Does Going Green Scale for Small and Large Companies?
+===========================================================================
+
+Target Duration: 7 to 15 Minutes (10 to 12 Minutes Spoken Delivery)
+Presenters: Simon Simpson, Richard Matthews, Dean Wilshaw, Christian Fairhall-Smith,
+            M Dahir, Ilyana Brooke, John Kennedy, Jimmy Gorst
+
+===========================================================================
+
+SLIDE 1: How Does Going Green Scale for Small and Large Companies?
+Section Focus: Opening & Team Presenters
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Welcome everyone. Today we are presenting our Catch22 group project. We are looking at how going green works in practice for small businesses compared to large corporations.
+
+  Our presentation covers four key areas: the main problems, target groups, practical barriers, and realistic solutions. All our facts and figures come from our group list of 18 verified UK sources.
+
+KEY POINTS ON SCREEN:
+  * Project Presenters: Simon Simpson, Richard Matthews, Dean Wilshaw, Christian Fairhall-Smith, M Dahir, Ilyana Brooke, John Kennedy, Jimmy Gorst
+  * Target Duration: Between 7 to 15 minutes spoken delivery
+  * 4 Project Criteria covered across 18 verified UK sources
+
+===========================================================================
+
+SLIDE 2: Long Term Gains vs Short Term Hurdles
+Section Focus: Core Dilemma
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Here is the central challenge. In the long run, saving energy cuts bills and protects the planet. But in the short term, change is difficult.
+
+  Small business owners must protect payroll first, and they cannot afford large upfront bills. Big firms have the money, but decisions get stuck across legal, buying, and facilities teams.
+
+KEY POINTS ON SCREEN:
+  * Small Firms: Tight cash, wages come first, green upgrades take 4 to 8 years to break even
+  * Large Firms: Decisions delayed by board reviews, departmental silos, and auditing thousands of suppliers
+
+===========================================================================
+
+SLIDE 3: The Main Problem: One Rule Does Not Fit All Firms
+Section Focus: Criteria 1: The Problem
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Our first criteria point is the problem businesses face. The UK has one big target to reach net zero, but small and large firms operate in completely different worlds.
+
+  Small companies produce a third of business emissions, but bank loans are too expensive. Large firms have money, but their green initiatives get bogged down in procurement rules and lease restrictions.
+
+KEY POINTS ON SCREEN:
+  * Small Firms: Produce 30% of commercial emissions, commercial bank loan rates of 8% to 12% are unaffordable
+  * Large Firms: Corporate plans stall in procurement silos, commercial leases restrict tenant alterations
+
+===========================================================================
+
+SLIDE 4: Target Market 1: Small Businesses (1 to 49 Staff)
+Section Focus: Criteria 2: Target Market
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Our second criteria point looks at target markets, starting with small businesses. As shown in the 2025 benchmark survey on screen, small firms lag behind large corporations across every measure.
+
+  Less than 20% of small businesses have carried out an energy audit or invested in electric vehicle fleets, compared to over 60% of large corporations.
+
+  Over half rent their premises, and cash reserves must protect weekly wages first. But their advantage is speed: once grants remove upfront costs, small owners can act immediately.
+
+KEY POINTS ON SCREEN:
+  * Who They Are: 1 to 49 staff run directly by owner managers with zero green staff
+  * 2025 Survey Chart: Under 20% of small firms carry out audits or EV fleets vs over 60% in big firms
+  * The Opportunity: Highly agile decision makers once grant funding removes the upfront cost
+
+===========================================================================
+
+SLIDE 5: Target Market 2: Large Corporations (250+ Staff)
+Section Focus: Criteria 2: Target Market
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Our second target group is large corporations with over 250 staff. They have green targets and must report their emissions by law.
+
+  The big fact here is that up to 90% of their carbon footprint comes from their supply chain, which is made up of small businesses.
+
+  That means big firms cannot reach net zero unless they help small suppliers succeed.
+
+KEY POINTS ON SCREEN:
+  * Who They Are: 250+ staff with formal governance and mandatory SECR carbon reporting
+  * Supply Chain Impact: Up to 90% of emissions sit in Scope 3 supplier networks across thousands of small vendors
+  * The Opportunity: Large balance sheets can fund clean energy and help smaller suppliers decarbonise
+
+===========================================================================
+
+SLIDE 6: Barriers and Challenges: Comparing Both Sides
+Section Focus: Criteria 3: Barriers & Changing Minds
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Our third criteria point covers barriers and changing minds. For small firms, the obstacles are paperwork and rented premises. We change their minds by showing immediate cash savings on electricity bills.
+
+  For large companies, the barrier is internal red tape and director fiduciary duty, where boards worry that green spending lowers short term profits.
+
+  We change their minds by proving that a clean supply chain protects long term shareholder value and wins customer trust.
+
+KEY POINTS ON SCREEN:
+  * Small Firm Barriers: 40+ hours spent on grant forms, rented units where landlords take value
+  * Changing Small Minds: Prove cash savings on utility bills within months, not years
+  * Large Firm Barriers: Fiduciary duty to shareholders, department silos, and slow 12 to 24 month reviews
+  * Changing Large Minds: Demonstrate that climate compliance protects long term shareholder value
+
+===========================================================================
+
+SLIDE 7: Solution 1: Affordable Funding for Small Firms
+Section Focus: Criteria 4: Practical Solutions
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Our fourth criteria point is practical solutions. Solution 1 helps small firms afford green upgrades. Instead of endless paperwork, we need simple voucher discounts.
+
+  We also need zero interest loan schemes through the British Business Bank so monthly savings pay for the loan. Fair green leases ensure landlords and tenants share the cost fairly.
+
+KEY POINTS ON SCREEN:
+  * Simple Vouchers: Replace 50-page grant applications with instant discount vouchers for heat pumps and LEDs
+  * Low Cost Green Loans: Zero interest loans where repayments come directly from monthly energy bill savings
+  * Fair Green Leases: Standard contracts where landlords and tenants split upgrade costs and share savings
+  * Group Buying Power: Local business clusters teaming up to buy solar arrays at corporate discount prices
+
+===========================================================================
+
+SLIDE 8: Solution 2: Big Companies Helping Small Suppliers
+Section Focus: Criteria 4: Practical Solutions
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Solution 2 focuses on big companies helping their supply chain. Rather than penalizing small suppliers, large buyers should pay for their initial energy audits and give them free measurement tools.
+
+  Most importantly, paying small green suppliers within 14 days provides the cashflow they need to stay afloat.
+
+KEY POINTS ON SCREEN:
+  * Co-Funded Audits: Large corporate buyers pay for energy audits for small suppliers
+  * Joint Green Teams: Uniting procurement, legal, and sustainability managers into one team
+  * 14-Day Fast Payments: Paying green-certified suppliers quickly to protect their working capital
+  * Free Shared Tools: Providing small vendors free access to carbon calculators and tracking software
+
+===========================================================================
+
+SLIDE 9: Solution 3: A Step by Step Roadmap
+Section Focus: Criteria 4: Practical Solutions
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  Solution 3 gives both small and large firms a simple roadmap.
+
+  In the first three months, focus on zero cost wins like smart meters and LED lights to bank immediate savings. In months 4 to 12, use those savings alongside government grants to buy solar and heat pumps. From year 2 onward, link with suppliers to build lasting value.
+
+KEY POINTS ON SCREEN:
+  * Step 1 (Months 1 to 3, No Extra Cost): Smart meters, LED lighting, and waste reduction saving 10% to 20% on bills
+  * Step 2 (Months 4 to 12, Grant Funded): Heat pumps, solar panels, and EV chargers using vouchers and reinvested cash
+  * Step 3 (Year 2 Onward, Full Scale): Supply chain collaboration, cleaner logistics, and long-term commercial value
+
+===========================================================================
+
+SLIDE 10: Reliable Information: All 18 Group Sources
+Section Focus: Evidence Base & References
+---------------------------------------------------------------------------
+
+WHAT TO SAY (SPOKEN SCRIPT):
+  To finish, every point, grant scheme, and commercial fact in our presentation is supported by our group list of 18 verified sources from Microsoft Loop.
+
+  We used AI tools to help gather initial ideas, and checked every number against official UK government and business sources.
+
+  Thank you for listening, and we are happy to take any questions.
+
+KEY POINTS ON SCREEN:
+  * 9 Small Business Support Sources: Green Living Blog, Companies House, WWF UK, British Business Bank, Plastic Bank, LEP Growth Hubs, UK Business Climate Hub, Energy Saving Trust, FSB
+  * 9 Corporate Policy Sources: Government Commercial Function, Carbon Trust, Green Alliance, Cabinet Office, ScienceDirect, Priori Data, Institute of Sustainability Studies (2), United Nations
+
+===========================================================================
+
+";
             const blob = new Blob([scriptText], { type: 'text/plain;charset=utf-8' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = 'Catch22_Presentation_Speaker_Notes.txt';
+            a.download = 'Catch22_Speaker_Notes.txt';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

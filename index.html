@@ -421,43 +421,6 @@
             stroke-width: 2.5;
         }
 
-        /* Live Presenter Notes Drawer */
-        .notes-drawer {
-            position: fixed;
-            bottom: 4.2rem;
-            right: 2.2rem;
-            width: min(540px, 92vw);
-            max-height: 48vh;
-            background: rgba(2, 26, 18, 0.96);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(52, 211, 153, 0.5);
-            border-radius: 0.85rem;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-            display: none;
-            flex-direction: column;
-            z-index: 95;
-            overflow: hidden;
-            animation: slideIn 0.25s ease-out forwards;
-        }
-        .notes-drawer.open {
-            display: flex;
-        }
-        .notes-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.55rem 0.95rem;
-            background: rgba(6, 78, 59, 0.6);
-            border-bottom: 1px solid rgba(52, 211, 153, 0.3);
-        }
-        .notes-body {
-            padding: 0.85rem 1rem;
-            overflow-y: auto;
-            color: #f1f5f9;
-            font-size: 0.86rem;
-            line-height: 1.5;
-        }
-
         /* Footer */
         .footer {
             position: absolute;
@@ -1308,13 +1271,8 @@
         </div>
     </div>
 
-    <!-- Fixed Floating Navigation Controls (Speaker Notes, Previous, Next) -->
+    <!-- Fixed Floating Navigation Controls (Arrows Only, No Words) -->
     <div class="nav-controls">
-        <button class="btn-nav" id="notesBtn" onclick="toggleNotes()" aria-label="Toggle Speaker Notes" title="Speaker Notes (N)">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-            </svg>
-        </button>
         <button class="btn-nav" id="prevBtn" onclick="prevSlide()" aria-label="Previous Slide">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
@@ -1325,18 +1283,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
             </svg>
         </button>
-    </div>
-
-    <!-- Live Presenter Notes Drawer -->
-    <div id="notesDrawer" class="notes-drawer">
-        <div class="notes-header">
-            <div class="flex items-center gap-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Speaker Script</span>
-                <span id="notesPresenter" class="text-[11px] text-emerald-200 font-mono"></span>
-            </div>
-            <button onclick="toggleNotes()" class="text-slate-300 hover:text-white text-xs px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/30">Close (N)</button>
-        </div>
-        <div id="notesContent" class="notes-body"></div>
     </div>
 
     <!-- Interactive Lightbox Modal -->
@@ -1375,7 +1321,6 @@
             if (nextBtn) nextBtn.disabled = (index === totalSlides);
 
             currentSlide = index;
-            updateNotes();
         }
 
         function nextSlide() {
@@ -1388,24 +1333,6 @@
             if (currentSlide > 1) {
                 showSlide(currentSlide - 1);
             }
-        }
-
-        function toggleNotes() {
-            const drawer = document.getElementById('notesDrawer');
-            drawer.classList.toggle('open');
-            updateNotes();
-        }
-
-        function updateNotes() {
-            const activeSlide = document.querySelector('.slide.active');
-            if (!activeSlide) return;
-            const text = activeSlide.getAttribute('data-notes') || 'No speaker script recorded for this slide.';
-            const presenter = activeSlide.querySelector('.presenter-badge');
-            const pText = presenter ? presenter.textContent : '';
-            const pEl = document.getElementById('notesPresenter');
-            if (pEl) pEl.textContent = pText;
-            const cEl = document.getElementById('notesContent');
-            if (cEl) cEl.textContent = text;
         }
 
         // Keyboard Navigation
@@ -1426,9 +1353,6 @@
             } else if (e.key === 'End') {
                 e.preventDefault();
                 showSlide(totalSlides);
-            } else if (e.key === 'n' || e.key === 'N') {
-                e.preventDefault();
-                toggleNotes();
             }
         });
 
